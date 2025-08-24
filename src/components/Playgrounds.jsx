@@ -1036,7 +1036,7 @@ const Playgrounds = () => {
                         <input type="radio" name="startTime" value={'15:00'} />
                         <p className="time">03:00</p>
                         <span className="footer">
-                          <img src="./icons/sun.png" alt="#" />
+                          <img src={`${PUBLIC_ASSETS.icons}sun.png`} alt="#" />
                           <small>PM</small>
                         </span>
                       </label>
@@ -1047,7 +1047,7 @@ const Playgrounds = () => {
                         <input type="radio" name="startTime" value={'16:00'} />
                         <p className="time">04:00</p>
                         <span className="footer">
-                          <img src="./icons/sun.png" alt="#" />
+                          <img src={`${PUBLIC_ASSETS.icons}sun.png`} alt="#" />
                           <small>PM</small>
                         </span>
                       </label>
@@ -1058,7 +1058,7 @@ const Playgrounds = () => {
                         <input type="radio" name="startTime" value={'17:00'} />
                         <p className="time">05:00</p>
                         <span className="footer">
-                          <img src="./icons/sun.png" alt="#" />
+                          <img src={`${PUBLIC_ASSETS.icons}sun.png`} alt="#" />
                           <small>PM</small>
                         </span>
                       </label>
@@ -1069,7 +1069,7 @@ const Playgrounds = () => {
                         <input type="radio" name="startTime" value={'18:00'} />
                         <p className="time">06:00</p>
                         <span className="footer">
-                          <img src="./icons/moon.png" alt="#" />
+                          <img src={`${PUBLIC_ASSETS.icons}moon.png`} alt="#" />
                           <small>PM</small>
                         </span>
                       </label>
@@ -1080,7 +1080,7 @@ const Playgrounds = () => {
                         <input type="radio" name="startTime" value={'19:00'} />
                         <p className="time">07:00</p>
                         <span className="footer">
-                          <img src="./icons/moon.png" alt="#" />
+                          <img src={`${PUBLIC_ASSETS.icons}moon.png`} alt="#" />
                           <small>PM</small>
                         </span>
                       </label> */}

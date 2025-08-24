@@ -5,6 +5,8 @@ import AdBanner from '../components/AdBanner';
 import Sidebar from '../components/Sidebar';
 import { useRef, useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import { PUBLIC_ASSETS } from '../config';
+
 const Home = () => {
   const slidesRef = useRef();
   const [index, setIndex] = useState(0);
@@ -27,14 +29,14 @@ const Home = () => {
       <section className="hero">
         <div className="container">
           {/* <img src="./images/img1.png" alt="#" /> */}
-          <img src={darkMode ? ".dist/icons/volleyball-white.png" : "./dist/icons/volleyball-black.png"} alt="#" />
-          <img src={darkMode ? "./dist/icons/volleyball-2-white.png" : "./dist/icons/volleyball-2-black.png"} alt="#" />
+          <img src={darkMode ? `${PUBLIC_ASSETS.icons}volleyball-white.png` : `${PUBLIC_ASSETS.icons}volleyball-black.png`} alt="#" />
+          <img src={darkMode ? `${PUBLIC_ASSETS.icons}volleyball-2-white.png` : `${PUBLIC_ASSETS.icons}volleyball-2-black.png`} alt="#" />
           <span className="middle">
-            <img src={darkMode ? "./dist/icons/soccer-white.png" : "./dist/icons/soccer-black.png"} alt="#" />
+            <img src={darkMode ? `${PUBLIC_ASSETS.icons}soccer-white.png` : `${PUBLIC_ASSETS.icons}soccer-black.png`} alt="#" />
             <h2>Football</h2>
           </span>
-          <img src={darkMode ? "./dist/icons/volleyball-2-white.png" : "./dist/icons/volleyball-2-black.png"} alt="#" />
-          <img src={darkMode ? "./dist/icons/volleyball-3-white.png" : "./dist/icons/volleyball-3-black.png"} alt="#" />
+          <img src={darkMode ? `${PUBLIC_ASSETS.icons}volleyball-2-white.png` : `${PUBLIC_ASSETS.icons}volleyball-2-black.png`} alt="#" />
+          <img src={darkMode ? `${PUBLIC_ASSETS.icons}volleyball-3-white.png` : `${PUBLIC_ASSETS.icons}volleyball-3-black.png`} alt="#" />
         </div>
 
         <AdBanner placement="home" />
