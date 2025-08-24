@@ -415,23 +415,7 @@ header nav .notifications .items .item .right .time {
 }
 
 /* Notification Footer */
-header nav .notifications .items::after {
-  content: 'View All Notifications';
-  text-align: center;
-  padding: 10px;
-  border-top: 1px solid var(--color-border);
-  margin-top: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-green);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  border-radius: 6px;
-}
-
-header nav .notifications .items:hover::after {
-  background-color: var(--color-grey-100);
-}
+/* Removed View All Notifications footer */
 
 /* Mobile Menu Toggle Button */
 .mobile-menu-toggle {

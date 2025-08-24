@@ -6,6 +6,7 @@ import config from '../config';
 
 const Sidebar = () => {
   const [role, setRole] = useState('user');
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
   const [showActivityLogs, setShowActivityLogs] = useState(false);
   const [userBookings, setUserBookings] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,6 +27,14 @@ const Sidebar = () => {
         console.error('Error parsing user data:', error);
       }
     }
+  }, []);
+
+  // Track viewport to know when menu button is shown (mobile)
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // Fetch user bookings
@@ -239,6 +248,15 @@ const Sidebar = () => {
   return (
     <>
       <aside className="left">
+        {isMobile && (
+          <section className="homeSection">
+            <span className="favourite">
+              <i className="fas fa-home" style={{ width: '20px', height: '20px' }}></i>
+              <Link to={'/'}>Home</Link>
+              <i className="fas fa-chevron-right" style={{ fontSize: '16px', opacity: 0.7 }}></i>
+            </span>
+          </section>
+        )}
         <section className="activitiesList">
           <span className="activityLog">
             <img 

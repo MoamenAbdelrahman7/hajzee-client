@@ -339,7 +339,7 @@ main .hero .playgrounds > .items .item .info span {
 }
 main .hero .playgrounds > .items .item .info span .location {
   color: var(--color-grey-600);
-  font-size: 0.9rem;
+  font-size: 0.8rem;  
   letter-spacing: 0.4px;
   display: flex;
   align-items: center;
@@ -373,7 +373,7 @@ body.dark main .hero .playgrounds > .items .item .info span .location .item-loca
 }
 main .hero .playgrounds > .items .item .info span .price {
   color: var(--color-green);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -1601,9 +1601,37 @@ main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warni
   }
 }
 
+@media (max-width: 480px) {
+  main .hero .playgrounds .playgroundDetails .centerBox {
+    width: 95%;
+    height: 88vh;
+    padding: 16px 12px;
+  }
+
+  main .hero .playgrounds .playgroundDetails .centerBox .images .slider {
+    height: 180px;
+  }
+
+  main .hero .playgrounds .playgroundDetails .centerBox .info {
+    padding: 12px 10px;
+    gap: 16px;
+  }
+
+  main .hero .playgrounds .playgroundDetails .centerBox .info .location {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  main .hero .playgrounds .playgroundDetails .centerBox .bookings table th,
+  main .hero .playgrounds .playgroundDetails .centerBox .bookings table td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
 /* Bookings of a playground */
 main .hero .playgrounds .playgroundDetails .centerBox h1{
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 1rem + 1.5vw, 1.8rem);
   letter-spacing: 0.5px;
   color: var(--color-text);
   
@@ -1616,7 +1644,7 @@ main .hero .playgrounds .playgroundDetails .centerBox .bookings{
 }
 main .hero .playgrounds .playgroundDetails .centerBox .bookings table{
   width: 100%;
-    margin: 20px auto;
+    margin: 12px auto;
     border-collapse: collapse; /* removes double borders */
     /* font-family: Arial, sans-serif; */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -1624,16 +1652,19 @@ main .hero .playgrounds .playgroundDetails .centerBox .bookings table{
 
 td, th{
     border: 1px solid var(--color-border);
-    padding: 12px 15px;
+    padding: clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 15px);
     text-align: left;
     color: var(--color-text);
+    font-size: clamp(0.8rem, 0.75rem + 0.6vw, 1rem);
 }
 
   th {
     background-color: var(--color-grey-300);
     font-weight: bold;
     color: var(--color-text);
-
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 tr{
     background-color: var(--color-grey-100);
@@ -2207,6 +2238,7 @@ html {
 @media (max-width: 768px) {
   main .hero .playgrounds > .items .item {
     width: 47%;
+    height: 200px;
   }
   
   main .hero .playgrounds > .items .item .info .title {
@@ -2214,7 +2246,7 @@ html {
   }
   
   main .hero .playgrounds > .items .item .info span .location {
-    font-size: 0.85rem;
+    font-size: 1.1rem; 
   }
   
   main .hero .playgrounds > .items .item .info span {
@@ -2283,7 +2315,6 @@ html {
   main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item {
     width: 80px;
     min-width: 80px;
-    height: 100px;
   }
   
   main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item p {
@@ -2299,6 +2330,9 @@ html {
     padding: 6px 15px;
   }
   
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes{
+    gap: 5px;
+  }
   main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size {
     width: 100px;
     height: 100px;
@@ -2307,18 +2341,18 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
   }
   main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size .size-text{
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 1.1rem;
+    margin-top: 5px;
     width: 100%;
     text-align: center;
   }
   
   main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size .size-icon {
-    font-size: 50px;
-    margin-top: 10px;
+    font-size: 2.2rem;
+    margin-top: 5px;
   }
 }
 
@@ -2351,23 +2385,36 @@ html {
   
   main .hero .playgrounds > .items .item {
     width: 100%;
-    max-height: 260px;
-  }
-  
-  main .hero .playgrounds > .items .item img {
-    height: 160px;
-  }
-  
-  main .hero .playgrounds > .items .item::before {
-    height: 160px;
-  }
-  
-  main .hero .playgrounds > .items .item .info {
-    padding: 12px 15px;
+    height: 250px;
+    min-height: 250px;
   }
   
   main .hero .playgrounds > .items .item .info .title {
+    font-size: 1.2rem;
+  }
+  
+  main .hero .playgrounds > .items .item .info span .location {
     font-size: 1rem;
+  }
+  
+  main .hero .playgrounds > .items .item .info span .price {
+    font-size: 0.95rem;
+  }
+  
+  main .hero .playgrounds > .items .item img {
+    height: 120px;
+  }
+  
+  main .hero .playgrounds > .items .item::before {
+    height: 120px;
+  }
+  
+  main .hero .playgrounds > .items .item .info {
+    padding: 8px 12px;
+  }
+  
+  main .hero .playgrounds > .items .item .info .title {
+    font-size: 1.2rem;  
   }
   
   .items .item #favouriteBt {
@@ -3201,18 +3248,18 @@ html {
 
 .image-modal-info h3 {
   margin: 0 0 8px 0;
-  font-size: 1.5rem;
+  font-size: 1rem;  
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  animation: textFadeIn 0.8s ease-out 0.7s both;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  animation: textFadeIn 0.6s ease-out 0.7s both;
 }
 
 .image-modal-info p {
   margin: 0;
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 0.9rem;
+  opacity: 0.8;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  animation: textFadeIn 0.8s ease-out 0.8s both;
+  animation: textFadeIn 0.6s ease-out 0.8s both;
 }
 
 @keyframes infoSlideUp {
@@ -3229,7 +3276,7 @@ html {
 @keyframes textFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
   100% {
     opacity: 1;
