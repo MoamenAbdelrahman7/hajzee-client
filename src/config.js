@@ -1,5 +1,5 @@
 // Centralized configuration for API and static assets
-const RAW_API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+const RAW_API_URL =  'https://hajzee-server-production.up.railway.app';
 const API_BASE = String(RAW_API_URL).replace(/\/+$/, '');
 
 export const API_URL = `${API_BASE}/`;
