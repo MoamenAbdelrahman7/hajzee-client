@@ -1,6 +1,6 @@
 import './styles/playgrounds.css';
 import { useEffect, useRef, useState } from 'react';
-import config, { IMAGES } from '../config';
+import config, { IMAGES, PUBLIC_ASSETS } from '../config';
 import { QRCodeSVG } from 'qrcode.react';
 import NewPlayground from './NewPlayground';
 
@@ -836,14 +836,14 @@ const Playgrounds = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <button className="closeBt" onClick={() => setPGdetailsShow(false)}>
-                <img src="./images/x.png" alt="#" />
+                <img src={`${PUBLIC_ASSETS.images}x.png`} alt="#" />
               </button>
 
               {user?.role === 'user' ? (
                 <>
                   <div className="images">
                     <button className="prev" onClick={handlePrev}>
-                      <img src="./icons/left-arrow-prev.png" alt="#" />
+                      <img src={`${PUBLIC_ASSETS.icons}left-arrow-prev.png`} alt="#" />
                     </button>
 
                     <div className="slider">
@@ -869,7 +869,7 @@ const Playgrounds = () => {
                     </div>
 
                     <button className="next" onClick={handleNext}>
-                      <img src="./icons/right-arrow-next.png" alt="#" />
+                      <img src={`${PUBLIC_ASSETS.icons}right-arrow-next.png`} alt="#" />
                     </button>
 
                     <button className="fullscreen-btn" onClick={openPlaygroundImages}>
@@ -894,7 +894,7 @@ const Playgrounds = () => {
                         style={{ display: showDirections ? 'flex' : 'none' }}
                       >
                         <div className="googleMaps">
-                          <img src="./icons/googleMaps.png" alt="google maps icon" />
+                          <img src={`${PUBLIC_ASSETS.icons}googleMaps.png`} alt="google maps icon" />
                           <a
                             href={
                               openedPlayground?.googleMapUrl ||
@@ -910,7 +910,7 @@ const Playgrounds = () => {
                           </a>
                         </div>
                         <div className="appleMaps">
-                          <img src="./icons/apple.png" alt="apple maps icon" />
+                          <img src={`${PUBLIC_ASSETS.icons}apple.png`} alt="apple maps icon" />
                           <a
                             href={
                               openedPlayground?.appleMapUrl ||
@@ -1018,7 +1018,7 @@ const Playgrounds = () => {
                                 </p>
                                 <span className="footer">
                                   <img
-                                    src={`./icons/${parseInt(slot.time.split(':')[0]) > 17 ? 'moon' : 'sun'}.png`}
+                                    src={`${PUBLIC_ASSETS.icons}${parseInt(slot.time.split(':')[0]) > 17 ? 'moon' : 'sun'}.png`}
                                     alt="#"
                                   />
                                   <small>{parseInt(slot.time.split(':')[0]) > 12 ? 'PM' : 'AM'}</small>

@@ -27,14 +27,14 @@ const Home = () => {
       <section className="hero">
         <div className="container">
           {/* <img src="./images/img1.png" alt="#" /> */}
-          <img src={darkMode ? "./icons/volleyball-white.png" : "./icons/volleyball-black.png"} alt="#" />
-          <img src={darkMode ? "./icons/volleyball-2-white.png" : "./icons/volleyball-2-black.png"} alt="#" />
+          <img src={darkMode ? ".dist/icons/volleyball-white.png" : "./dist/icons/volleyball-black.png"} alt="#" />
+          <img src={darkMode ? "./dist/icons/volleyball-2-white.png" : "./dist/icons/volleyball-2-black.png"} alt="#" />
           <span className="middle">
-            <img src={darkMode ? "./icons/soccer-white.png" : "./icons/soccer-black.png"} alt="#" />
+            <img src={darkMode ? "./dist/icons/soccer-white.png" : "./dist/icons/soccer-black.png"} alt="#" />
             <h2>Football</h2>
           </span>
-          <img src={darkMode ? "./icons/volleyball-2-white.png" : "./icons/volleyball-2-black.png"} alt="#" />
-          <img src={darkMode ? "./icons/volleyball-3-white.png" : "./icons/volleyball-3-black.png"} alt="#" />
+          <img src={darkMode ? "./dist/icons/volleyball-2-white.png" : "./dist/icons/volleyball-2-black.png"} alt="#" />
+          <img src={darkMode ? "./dist/icons/volleyball-3-white.png" : "./dist/icons/volleyball-3-black.png"} alt="#" />
         </div>
 
         <AdBanner placement="home" />

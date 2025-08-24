@@ -10,9 +10,18 @@ export const IMAGES = {
   ads: `${API_BASE}/static/img/ads/`,
 };
 
+// Public assets (served from /public at build time)
+export const PUBLIC_BASE = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '/')
+export const PUBLIC_ASSETS = {
+  icons: `${PUBLIC_BASE}icons/`,
+  images: `${PUBLIC_BASE}images/`,
+};
+
 export default {
   API_URL,
   IMAGES,
+  PUBLIC_BASE,
+  PUBLIC_ASSETS,
 };
 
 

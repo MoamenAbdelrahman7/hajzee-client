@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { IMAGES, API_URL } from '../config';
+import { IMAGES, API_URL, PUBLIC_ASSETS } from '../config';
 import './styles/profile.css';
 import UpdatePassword from '../components/UpdatePassword';
 import Alert from '../components/Alert';
@@ -183,7 +183,7 @@ const Profile = () => {
           <fieldset className="profile-fieldset">
             <label className="profile-label" htmlFor="username">Username</label>
             <span className={`profile-input-group ${isEditing ? 'editable' : ''}`}>
-              <img src="./icons/user.png" alt="#" />
+              <img src={`${PUBLIC_ASSETS.icons}user.png`} alt="#" />
               <input
                 type="text"
                 name="name"
@@ -202,7 +202,7 @@ const Profile = () => {
           <fieldset className="profile-fieldset">
             <label className="profile-label" htmlFor="phoneNumber">Phone number</label>
             <span className={`profile-input-group ${isEditing ? 'editable' : ''}`}>
-              <img src="./icons/phone.png" alt="#" />
+              <img src={`${PUBLIC_ASSETS.icons}phone.png`} alt="#" />
               <input
                 type="text"
                 name="phone"
@@ -221,7 +221,7 @@ const Profile = () => {
           <fieldset className="profile-fieldset">
             <label className="profile-label" htmlFor="email">E-mail</label>
             <span className="profile-input-group">
-              <img src="./icons/email.png" alt="#" />
+              <img src={`${PUBLIC_ASSETS.icons}email.png`} alt="#" />
               <input
                 type="email"
                 name="email"

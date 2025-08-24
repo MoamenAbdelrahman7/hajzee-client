@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 // import signupImage from '@/public/images/signup.jpg';
 // import { useRouter } from 'next/navigation';
 import Popup from './../components/Popup';
-import config from '../config';
+import config, { PUBLIC_ASSETS } from '../config';
 import { Link } from 'react-router-dom';
 import './../pages/styles/signup.css';
 export default function SignUp() {
@@ -152,7 +152,7 @@ export default function SignUp() {
 
   return (
     <div className="signupContainer">
-      <img src="./images/pitch1.jpg" alt="Signup" />
+      <img src={`${PUBLIC_ASSETS.images}pitch1.jpg`} alt="Signup" />
       <div className="right">
         <div className="head">
           <h1>Create an account</h1>
