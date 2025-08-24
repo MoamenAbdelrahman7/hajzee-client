@@ -53,10 +53,10 @@ const Messages = () => {
   };
 
   useEffect(() => { load(); }, []);
-  useEffect(() => {
-    const id = setInterval(load, 15000);
-    return () => clearInterval(id);
-  }, []);
+  // useEffect(() => {
+  //   const id = setInterval(load, 15000);
+  //   return () => clearInterval(id);
+  // }, []);
 
   const formatTime = (dateString) => new Date(dateString).toLocaleString('en-GB', { timeZone: 'UTC' });
 

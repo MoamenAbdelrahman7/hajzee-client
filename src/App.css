@@ -16,21 +16,20 @@ body {
 }
 
 .page-container {
-  padding-top: 60px; /* Equal to the height of the navbar */
+  padding-top: 60px; 
 }
 
-/* Responsive padding adjustments to match navbar height */
 @media (max-width: 768px) {
   .page-container {
-    padding-top: 55px; /* Match navbar height on tablet */
+    padding-top: 50px; 
   }
 }
 
 @media (max-width: 480px) {
   .page-container {
-    padding-top: 50px; /* Match navbar height on mobile */
+    padding-top: 50px; 
   }
-}
+} 
 
 a {
   text-decoration: none;

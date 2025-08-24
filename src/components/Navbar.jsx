@@ -1,10 +1,11 @@
 import './styles/navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useMemo, useState } from 'react';
 import { IMAGES } from '../config';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { fetchNotifications, markNotificationRead, deleteNotification } from '../services/notifications';
+import Sidebar from './Sidebar';
 const Navbar = () => {
   const IMAGES_URL = IMAGES.users;
 
@@ -14,9 +15,11 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { darkMode, toggleDarkMode } = useTheme();
   const { user, logout, isAuthenticated } = useAuth();
+  const location = useLocation();
   const userRole = useMemo(() => (user?.role || 'user'), [user]);
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
+  const [shouldRenderInlineSidebar, setShouldRenderInlineSidebar] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -97,6 +100,19 @@ const Navbar = () => {
     intervalId = setInterval(load, 30000);
     return () => clearInterval(intervalId);
   }, [isAuthenticated, userRole]);
+
+  // Render an inline Sidebar on non-home pages at mobile widths if none exists
+  useEffect(() => {
+    const evaluateSidebarRender = () => {
+      const isMobile = window.innerWidth <= 768;
+      const isHome = location.pathname === '/';
+      const existingSidebar = document.querySelector('aside.left');
+      setShouldRenderInlineSidebar(isMobile && !isHome && !existingSidebar);
+    };
+    evaluateSidebarRender();
+    window.addEventListener('resize', evaluateSidebarRender);
+    return () => window.removeEventListener('resize', evaluateSidebarRender);
+  }, [location.pathname]);
 
   const handleOpenNotifications = async () => {
     setShowNotifications(!showNotifications);
@@ -293,6 +309,7 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
+      {shouldRenderInlineSidebar && <Sidebar />}
     </>
   );
 };

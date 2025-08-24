@@ -26,7 +26,8 @@ function App() {
     <ThemeProvider>
       <AuthProvider>
         {!isAuthPage && !isAdminPage && <Navbar />}
-        <div className="page-container" style={{paddingTop: isAdminPage || isAuthPage ? '0px' : '60px'}}>
+        <div className="page-container" style={{paddingTop: isAdminPage || isAuthPage ? '0px' : '60px'}}> 
+          {/*  */}
           <ChatLauncher />
           <Routes>
             {/* Public routes */}
