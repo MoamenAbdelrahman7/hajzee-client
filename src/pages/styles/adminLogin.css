@@ -1,0 +1,164 @@
+.admin-login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a; /* Dark background */
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 0.5s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.admin-form-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  background-color: #2a2a2a; /* Darker background for the form */
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.admin-logo {
+  margin-bottom: 1.5rem;
+}
+
+.admin-logo h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.admin-logo h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #4CAF50;
+  border-radius: 2px;
+}
+
+.admin-form-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.admin-form-container p {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.admin-error-message {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #e53935;
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: left;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.admin-input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.admin-input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.admin-input-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--color-grey-100);
+  color: var(--color-text);
+  transition: border-color 0.3s ease;
+}
+
+.admin-input-group input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.admin-submit-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.admin-submit-btn:hover {
+  background-color: #45a049;
+}
+
+.back-to-main {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.back-link {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-form-container {
+    padding: 1.5rem;
+    margin: 0 15px;
+  }
+  
+  .admin-logo h1 {
+    font-size: 1.8rem;
+  }
+  
+  .admin-form-container h2 {
+    font-size: 1.5rem;
+  }
+}

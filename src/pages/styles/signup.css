@@ -1,0 +1,450 @@
+/* Reset body and html margins */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.signupContainer {
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  padding-top: 0 !important; /* Override global page-container padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.signupContainer img {
+  width: 50%;
+  height: 100vh;
+  object-fit: cover;
+  position: sticky;
+  top: 0;
+}
+
+.signupContainer .right {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  background-color: var(--color-surface);
+  overflow-y: auto;
+  animation: fadeInRight 0.6s ease-out;
+  border-left: 1px solid var(--color-border);
+  max-height: 100vh;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.right .head h1 {
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.right .head p {
+  font-size: 14px;
+  margin: 0;
+  color: var(--color-grey-600);
+  font-weight: 500;
+}
+
+.right .head p a {
+  color: var(--color-green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.right .head p a:hover {
+  color: #45a049;
+  background-color: rgba(0, 156, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: none;
+}
+
+.right form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.right form fieldset label {
+  font-size: 14px;
+  color: var(--color-grey-700);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.right form fieldset input,
+.right form fieldset textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: var(--color-light-grey);
+  color: var(--color-text);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.right form fieldset input:focus,
+.right form fieldset textarea:focus {
+  outline: none;
+  border-color: var(--color-green);
+  background-color: rgba(0, 156, 0, 0.05);
+  box-shadow: 0 0 0 2px rgba(0, 156, 0, 0.1);
+}
+
+.right form fieldset input::placeholder {
+  color: var(--color-grey-500);
+  font-weight: 400;
+}
+
+/* Phone field specific styling */
+.right form fieldset input[type="tel"] {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.right form fieldset input[type="tel"]:valid {
+  border-color: var(--color-green);
+  background-color: rgba(0, 156, 0, 0.05);
+}
+
+.right form fieldset input[type="tel"]:invalid:not(:placeholder-shown) {
+  border-color: #e53935;
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.right form fieldset textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Photo Upload Styles */
+.photo-upload {
+  margin-bottom: 4px;
+}
+
+.photo-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border: 2px dashed var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-light-grey);
+  transition: all 0.3s ease;
+
+
+}
+
+.photo-preview-container:hover {
+  border-color: var(--color-green);
+  background-color: rgba(0, 156, 0, 0.05);
+}
+
+.photo-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100px;
+  max-height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.photo-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--color-grey-200);
+  border: 2px dashed var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-grey-600);
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.upload-btn {
+  padding: 8px 16px;
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 156, 0, 0.3);
+}
+
+/* Role Selection Styles */
+.role-options {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.role-options .role {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-light-grey);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.role-options .role:hover {
+  border-color: var(--color-green);
+  background-color: rgba(0, 156, 0, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 156, 0, 0.15);
+}
+
+.role-options .role.active {
+  border-color: var(--color-green);
+  background-color: rgba(0, 156, 0, 0.05);
+  box-shadow: 0 0 0 2px rgba(0, 156, 0, 0.1);
+}
+
+.role-options .role input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.role-options .role i {
+  color: var(--color-grey-600);
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.role-options .role.active i,
+.role-options .role:hover i {
+  color: var(--color-green);
+}
+
+.role-options .role img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.role-options .role.active img,
+.role-options .role:hover img {
+  opacity: 1;
+}
+
+.role-options .role p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.role-options .role small {
+  font-size: 12px;
+  color: var(--color-grey-600);
+  margin: 0;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.role-options .role.active small {
+  color: var(--color-green);
+}
+
+.right form button[type="submit"] {
+  margin: 8px 0 0 0;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: var(--color-green);
+  color: white;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.right form button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 156, 0, 0.3);
+}
+
+.right form button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 156, 0, 0.3);
+}
+
+.error-message {
+  background: rgba(244, 67, 54, 0.1);
+  color: #e53935;
+  border: 1px solid rgba(244, 67, 54, 0.2);
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signupContainer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .signupContainer img {
+    width: 100%;
+    height: 200px;
+    position: static;
+  }
+
+  .signupContainer .right {
+    padding: 32px 24px;
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .right .head h1 {
+    font-size: 1.8rem;
+  }
+
+  .role-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signupContainer img {
+    height: 150px;
+  }
+  
+  .signupContainer .right {
+    padding: 24px 20px;
+    gap: 20px;
+  }
+  
+  .right .head h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .right .head p {
+    font-size: 13px;
+  }
+  
+  .right form fieldset input,
+  .right form fieldset textarea {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .right form button[type="submit"] {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .photo-preview-container {
+    padding: 16px;
+  }
+  
+  .photo-preview {
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+  }
+  
+  .photo-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 11px;
+  }
+  
+  .upload-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .role-options .role {
+    padding: 16px 12px;
+  }
+
+  .role-options .role i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .role-options .role img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+  }
+
+  .role-options .role p {
+    font-size: 14px;
+  }
+
+  .role-options .role small {
+    font-size: 11px;
+  }
+}

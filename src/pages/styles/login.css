@@ -1,0 +1,206 @@
+/* Reset body and html margins */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.loginContainer {
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  padding-top: 0 !important; /* Override global page-container padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+@keyframes loginFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.loginContainer .form-container {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  animation: loginFadeInUp 0.6s ease-out;
+  position: relative;
+}
+
+@keyframes loginFadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.loginContainer .logo {
+  margin-bottom: 24px;
+}
+
+.loginContainer .logo i {
+  color: var(--color-green);
+  margin-bottom: 16px;
+}
+
+.loginContainer .logo img {
+  max-width: 150px;
+}
+
+.loginContainer h1 {
+  color: var(--color-text);
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.loginContainer p {
+  color: var(--color-grey-600);
+  margin-bottom: 32px;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.loginContainer .input-group {
+  margin-bottom: 24px;
+  text-align: left;
+  position: relative;
+}
+
+.loginContainer label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: var(--color-grey-700);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.loginContainer label i {
+  color: var(--color-green);
+  font-size: 14px;
+  width: 16px;
+}
+
+.loginContainer input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background-color: var(--color-light-grey);
+  color: var(--color-text);
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.loginContainer input:focus {
+  outline: none;
+  border-color: var(--color-green);
+  background-color: rgba(0, 156, 0, 0.05);
+  box-shadow: 0 0 0 2px rgba(0, 156, 0, 0.1);
+}
+
+.loginContainer input::placeholder {
+  color: var(--color-grey-500);
+  font-weight: 400;
+}
+
+.loginContainer .submit-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.loginContainer .submit-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 156, 0, 0.3);
+}
+
+.loginContainer .submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 156, 0, 0.3);
+}
+
+.loginContainer .switch-form {
+  margin-top: 24px;
+  color: var(--color-grey-600);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.loginContainer .switch-form a {
+  color: var(--color-green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.loginContainer .switch-form a:hover {
+  color: #45a049;
+  background-color: rgba(0, 156, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .loginContainer {
+    padding: 15px;
+  }
+  
+  .loginContainer .form-container {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginContainer .form-container {
+    padding: 24px 20px;
+  }
+  
+  .loginContainer h1 {
+    font-size: 1.6rem;
+  }
+  
+  .loginContainer input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .loginContainer .submit-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .loginContainer .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .loginContainer label {
+    font-size: 13px;
+  }
+}

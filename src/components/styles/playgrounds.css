@@ -1,0 +1,3414 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* Playgrounds */
+
+main .hero .playgrounds {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--color-background);
+  
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+main .hero .playgrounds .searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* color: grey; */
+  color: var(--color-grey-700);
+  font-weight: 500;
+  letter-spacing: 0.9px;
+  padding: 16px 0;
+  margin: 0 32px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+main .hero .playgrounds .searchBar > span{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+main .hero .playgrounds .searchBar > span #new-pg-Btn{
+  padding: 8px;
+  width: 60px;
+  border-radius: 4px;
+  background-color: var(--color-green);
+  border: var(--color-border);
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+main .hero .playgrounds .searchBar > span #new-pg-Btn{
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+main .hero .playgrounds .searchBar > span #new-pg-Btn:hover{ background-color: #43a047; }
+
+/* Owner badge styling for cards (if used) */
+.owner-badge { background: rgba(76,175,80,.12); color:#43a047; border:1px solid rgba(76,175,80,.25); padding:2px 8px; border-radius:999px; font-size:.75rem; font-weight:700; }
+
+
+main .hero .playgrounds .searchBar .search {
+  /* background-color: white; */
+  background-color: var(--color-grey-100);
+  /* width: 140px; */
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+
+main .hero .playgrounds .searchBar .search input {
+  padding: 10px 8px;
+  height: 100%;
+  border: none;
+  outline: none;
+  width: 270px;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  font-weight: 400;
+  /* color: rgb(41, 41, 41); */
+  color: var(--color-text);
+  background-color: var(--color-grey-100);
+
+}
+main .hero .playgrounds .searchBar .search input::placeholder{
+  color: var(--color-text);
+}
+main .hero .playgrounds .searchBar .search i {
+  font-size: 18px;
+  color: var(--color-text);
+  padding: 0 5px;
+}
+
+main .hero .playgrounds .searchBar .search img {
+  width: 25px;
+  height: 100%;
+}
+
+main .hero .playgrounds .searchBar .search button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Filter icon styling */
+main .hero .playgrounds .searchBar .search #filterIcon {
+  font-size: 20px;
+  color: var(--color-text);
+  padding: 0 5px;
+}
+
+/* playground items */
+.items .item {
+  position: relative;
+  height: 300px;
+}
+.items .item #favouriteBt {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark .items .item #favouriteBt {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+}
+
+.items .item #favouriteBt:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+body.dark .items .item #favouriteBt:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.items .item #favouriteBt:hover {
+  transform: scale(1.2) rotate(5deg);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(231, 76, 60, 0.3);
+  border-color: rgba(231, 76, 60, 0.3);
+}
+.items .item #favouriteBt i {
+  font-size: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #e74c3c; /* Red heart color */
+}
+
+.items .item #favouriteBt:hover i {
+  transform: scale(1.3);
+  color: #c0392b;
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+.items .item #favouriteBt .far.fa-heart {
+  color: #666; /* Empty heart color in light mode */
+}
+
+body.dark .items .item #favouriteBt .far.fa-heart {
+  color: #fff; /* Empty heart color in dark mode */
+}
+
+.items .item #favouriteBt:hover i {
+  transform: scale(1.2);
+}
+.items .item img {
+  width: 40px;
+  height: 40px;
+}
+main .hero .playgrounds > .items {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  min-height: 400px;
+  position: relative;
+  animation: fadeIn 0.5s ease-out;
+}
+main .hero .playgrounds > .items .emptyMsg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.5px;
+  /* color: grey; */
+  color: var(--color-text);
+}
+main .hero .playgrounds > .items .item {
+  width: 31%;
+  border: none;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  min-height: 340px;
+  background-color: var(--color-background);
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  animation: itemEntrance 0.6s ease-out;
+}
+
+main .hero .playgrounds > .items .item:nth-child(1) { animation-delay: 0.1s; }
+main .hero .playgrounds > .items .item:nth-child(2) { animation-delay: 0.2s; }
+main .hero .playgrounds > .items .item:nth-child(3) { animation-delay: 0.3s; }
+main .hero .playgrounds > .items .item:nth-child(4) { animation-delay: 0.4s; }
+main .hero .playgrounds > .items .item:nth-child(5) { animation-delay: 0.5s; }
+main .hero .playgrounds > .items .item:nth-child(6) { animation-delay: 0.6s; }
+main .hero .playgrounds > .items .item:nth-child(7) { animation-delay: 0.7s; }
+main .hero .playgrounds > .items .item:nth-child(8) { animation-delay: 0.8s; }
+main .hero .playgrounds > .items .item:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes itemEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main .hero .playgrounds > .items .item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 180px; */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%);
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  opacity: 0.8;
+}
+
+
+
+main .hero .playgrounds > .items .item:hover {
+  opacity: 1;
+  transform: translateY(-8px);
+  cursor: pointer;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 18px;
+}
+
+
+
+main .hero .playgrounds > .items .item:hover::before {
+  opacity: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.6) 100%);
+}
+
+main .hero .playgrounds > .items .item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-green), #66bb6a);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 0 16px;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+main .hero .playgrounds > .items .item:hover::after {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+}
+main .hero .playgrounds > .items .item img {
+  width: 100%;
+  height: 200px;
+  border-radius: 0;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+main .hero .playgrounds > .items .item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05) contrast(1.05);
+}
+main .hero .playgrounds > .items .item .info {
+  padding: 15px 18px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main .hero .playgrounds > .items .item:hover .info {
+  background-color: var(--color-background);
+  padding: 18px 20px;
+}
+main .hero .playgrounds > .items .item .info .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+main .hero .playgrounds > .items .item:hover .info .title {
+  color: var(--color-green);
+}
+main .hero .playgrounds > .items .item .info span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  /* margin-top: auto; */
+  padding-top: 10px;
+}
+main .hero .playgrounds > .items .item .info span .location {
+  color: var(--color-grey-600);
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 80px;
+  transition: all 0.3s ease;
+}
+
+main .hero .playgrounds > .items .item:hover .info span .location {
+  color: var(--color-text);
+}
+
+main .hero .playgrounds > .items .item .info span .location .item-location-icon {
+  font-size: 14px;
+  margin-right: 5px;
+  color: var(--color-green);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+main .hero .playgrounds > .items .item:hover .info span .location .item-location-icon {
+  color: var(--color-green);
+}
+
+body.dark main .hero .playgrounds > .items .item .info span .location .item-location-icon {
+  color: var(--color-green, #4CAF50);
+}
+main .hero .playgrounds > .items .item .info span .price {
+  color: var(--color-green);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.2));
+  padding: 6px 12px;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 15px;
+  right: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+main .hero .playgrounds > .items .item:hover .info span .price {
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.3));
+  border-color: rgba(76, 175, 80, 0.3);
+  color: #2e7d32;
+}
+
+/* playground details */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+main .hero .playgrounds .playgroundDetails {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1005;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+main .hero .playgrounds .playgroundDetails .centerBox {
+  position: relative;
+  width: 85%;
+  max-width: 1000px;
+  height: 85vh;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease-out;
+}
+main .hero .playgrounds .playgroundDetails .centerBox::-webkit-scrollbar {
+  display: none;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox button.closeBt,
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* background-color: var(--color-grey-200); */
+  background-color: #8585852c;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+main .hero .playgrounds .playgroundDetails .centerBox button.closeBt:hover,
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt:hover {
+  background-color: var(--color-grey-300);
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+main .hero .playgrounds .playgroundDetails .centerBox button.closeBt img,
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox button.closeBt:hover img,
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt:hover img {
+  opacity: 1;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .slider {
+  width: 100%;
+  position: relative;
+  height: 300px;
+  display: flex;
+  z-index: 2;
+  overflow-x: scroll;
+  border-radius: 12px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: sliderEntrance 0.8s ease-out;
+}
+
+@keyframes sliderEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images .slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll state animations */
+main .hero .playgrounds .playgroundDetails .centerBox .images .slider:active {
+  scroll-behavior: auto;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .slider.scrolling {
+  cursor: grabbing;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .slider.scrolling .slides {
+  transition: none;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images button.next,
+main .hero .playgrounds .playgroundDetails .centerBox .images button.prev {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: navButtonEntrance 0.6s ease-out;
+}
+
+@keyframes navButtonEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images button.next:hover,
+main .hero .playgrounds .playgroundDetails .centerBox .images button.prev:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images button.next img,
+main .hero .playgrounds .playgroundDetails .centerBox .images button.prev img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.8);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images button.next:hover img,
+main .hero .playgrounds .playgroundDetails .centerBox .images button.prev:hover img {
+  transform: scale(1.3) rotate(5deg);
+  filter: brightness(1.2);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images button.next {
+  right: 10px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .fullscreen-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.362);
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  color: white;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .fullscreen-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.15) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .fullscreen-btn:active {
+  transform: scale(0.95);
+  transition: all 0.1s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .fullscreen-btn i {
+  transition: transform 0.3s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .fullscreen-btn:hover i {
+  transform: rotate(180deg) scale(1.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images button.prev {
+  left: 10px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images .slider::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1));
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .slider::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  z-index: 1000;
+  animation: scrollIndicator 2s ease-in-out infinite;
+}
+
+@keyframes scrollIndicator {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateX(-50%) scaleX(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scaleX(1.2);
+  }
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images .slides {
+  display: flex;
+  transform: translateX(calc(-100% * var(--index, 0)));
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slidesEntrance 0.8s ease-out;
+}
+
+@keyframes slidesEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(-100% * var(--index, 0))) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(calc(-100% * var(--index, 0))) scale(1);
+  }
+}
+main .hero .playgrounds .playgroundDetails .centerBox .images .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: imageSlideIn 0.6s ease-out;
+  transform: scale(1);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .images .slides img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05) contrast(1.05);
+}
+
+@keyframes imageSlideIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+/* main .hero .playgrounds .playgroundDetails .centerBox .images img.active{
+    opacity: 1;
+} */
+main .hero .playgrounds .playgroundDetails .centerBox .images .name {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  z-index: 999;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 8px 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  width: auto;
+  max-width: 90%;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info .location {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+  background-color: var(--color-grey-100);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location span {
+  display: flex;
+  gap: 10px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location span .location-icon {
+  font-size: 24px;
+  color: var(--color-green);
+  margin-top: 3px;
+}
+
+body.dark main .hero .playgrounds .playgroundDetails .centerBox .info .location span .location-icon {
+  color: var(--color-green, #4CAF50);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info .location span p {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: var(--color-text);
+
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location button {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(76, 175, 80, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location button:hover {
+  background-color: var(--color-green-dark, #388e3c);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(76, 175, 80, 0.4);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info .location button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info .location .directions {
+  position: absolute;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100px;
+  right: 0;
+  bottom: -100px;
+  /* background-color: #d3d3d3; */
+  background-color: var(--color-light-grey);
+  padding: 16px 16px 0 16px;
+  border-radius: 6px;
+  z-index: 999;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location .directions::before {
+  content: '';
+  position: absolute;
+  /* background-color: #d3d3d3; */
+  background-color: var(--color-light-grey);
+  width: 30px;
+  height: 30px;
+  right: 45px;
+  top: -12px;
+  rotate: 45deg;
+  z-index: -1;
+  border-radius: 6px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location .directions div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location .directions img {
+  width: 25px;
+  height: 25px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location .directions a {
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  color: var(--color-text);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info .location .directions a:hover {
+  color: #b6b9b9;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  padding: 25px;
+  width: 100%;
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 25px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form fieldset {
+  border: none;
+  
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form fieldset > label {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField .date-picker-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField .date-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-green);
+  font-size: 18px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input {
+  padding: 14px 15px 14px 45px;
+  font-size: 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input:hover {
+  border-color: var(--color-green-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input:focus {
+  outline: none;
+  border-color: var(--color-green);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Hide default calendar icon */
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+/* Custom date input styling for different browsers */
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input::-webkit-datetime-edit {
+  padding: 0;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input::-webkit-datetime-edit-fields-wrapper {
+  color: var(--color-text);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input::-webkit-datetime-edit-text,
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input::-webkit-datetime-edit-month-field,
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input::-webkit-datetime-edit-day-field,
+main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField input::-webkit-datetime-edit-year-field {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #durationField .options {
+  display: flex;
+  gap: 18px;
+  margin: 10px 0 0 10px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #durationField .option {
+  border: 1px solid var(--color-border);
+  width: 100px;
+  padding: 6px 0;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 500;
+  background-color: var(--color-light-grey);
+  color: var(--color-green);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #durationField .option.active {
+  border: 1px solid green;
+  background-color: rgb(25, 197, 25);
+  color: white;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #durationField .option:hover {
+  cursor: pointer;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #durationField .option input {
+  /* visibility: hidden; */
+  display: none;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size {
+  border: 1px solid var(--color-border);
+  width: 100px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light-grey);
+  color: var(--color-text);
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size:hover{
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size.active{
+  background-color: var(--color-green);
+  color: white;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+  transform: scale(1.05);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  pointer-events: none;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size input {
+  display: none;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size.active p {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size .size-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--color-green);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size:hover .size-icon {
+  transform: scale(1.1);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size.active .size-icon {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form fieldset#startTimeField {
+  overflow: visible;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField {
+  position: relative;
+  width: 100%;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+/* Gradient fade effects for scrolling indication */
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 20px;
+  height: 125px;
+  background: linear-gradient(to left, var(--color-background), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 20px;
+  height: 125px;
+  background: linear-gradient(to right, var(--color-background), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 16px 12px 4px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+  white-space: nowrap;
+  min-height: 125px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items::-webkit-scrollbar {
+  height: 4px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items::-webkit-scrollbar-track {
+  background: var(--color-grey-200);
+  border-radius: 2px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items::-webkit-scrollbar-thumb {
+  background: var(--color-grey-500);
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items::-webkit-scrollbar-thumb:hover {
+  background: var(--color-grey-700);
+}
+
+
+
+
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item {
+  display: inline-flex !important;
+  vertical-align: top;
+  border: none;
+  background-color: var(--color-light-grey);
+  width: 90px;
+  min-width: 90px;
+  height: 110px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  scroll-snap-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-grey-200);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item.active {
+  background-color: var(--color-green);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+  transform: scale(1.05);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  pointer-events: none;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item.active p,
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item.active .footer {
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item input {
+  display: none;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item p {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  padding: 0 4px;
+  margin-top: 8px;
+  color: var(--color-grey-600);
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item .footer img {
+  width: 25px;
+  height: 25px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #proceedBt {
+  min-width: 140px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  letter-spacing: 0.8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+  cursor: pointer;
+  padding: 0 20px;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .info form #proceedBt:hover {
+  background-color: var(--color-green-dark, #388e3c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .info form #proceedBt:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+}
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  background: linear-gradient(135deg, #fff5f5, #fef2f2);
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border: 2px solid #fecaca;
+  color: #dc2626;
+  padding: 0;
+  border-radius: 20px;
+  box-shadow: 
+    0 25px 50px -12px rgba(220, 38, 38, 0.25),
+    0 0 0 1px rgba(220, 38, 38, 0.1) inset;
+  animation: warningSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+@keyframes warningSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotateX(0deg);
+  }
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  padding: 20px 25px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #fca5a5, #f87171, #fca5a5);
+  animation: warningPulse 2s ease-in-out infinite;
+}
+
+@keyframes warningPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.5px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header i {
+  font-size: 1.2rem;
+  animation: warningIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes warningIconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header .close-warning {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header .close-warning:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1) rotate(90deg);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header .close-warning:active {
+  transform: scale(0.95);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content {
+  padding: 25px;
+  background: white;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content p {
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #dc2626;
+  line-height: 1.5;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times {
+  background: linear-gradient(135deg, #fef2f2, #fecaca);
+  border: 1px solid #fca5a5;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  transition: all 0.3s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time span {
+  font-weight: 600;
+  color: #dc2626;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time strong {
+  color: #991b1b;
+  font-weight: 700;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warning {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 25px 25px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warning:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warning:hover::before {
+  left: 100%;
+}
+
+main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warning:active {
+  transform: translateY(0);
+}
+
+/* Dark mode support for warning message */
+@media (prefers-color-scheme: dark) {
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg {
+    background: linear-gradient(135deg, #1f1f1f, #2d1b1b);
+    border-color: #7f1d1d;
+    color: #fca5a5;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content {
+    background: #1f1f1f;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content p {
+    color: #fca5a5;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times {
+    background: linear-gradient(135deg, #2d1b1b, #3f1f1f);
+    border-color: #7f1d1d;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time {
+    background: #1f1f1f;
+    border-color: #7f1d1d;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time span {
+    color: #fca5a5;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time strong {
+    background: linear-gradient(135deg, #fca5a5, #f87171);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Responsive design for warning message */
+@media (max-width: 768px) {
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg {
+    max-width: 400px;
+    margin: 20px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header {
+    padding: 18px 20px 12px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content {
+    padding: 20px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times {
+    padding: 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warning {
+    padding: 12px 25px;
+    margin: 0 20px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg {
+    max-width: 350px;
+    margin: 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header {
+    padding: 15px 18px 10px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content {
+    padding: 18px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content p {
+    font-size: 1rem;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times {
+    padding: 12px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .warning-content .conflict-times .conflict-time {
+    padding: 8px 12px;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .warningMsg .dismiss-warning {
+    padding: 10px 20px;
+    margin: 0 15px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Bookings of a playground */
+main .hero .playgrounds .playgroundDetails .centerBox h1{
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  
+}
+main .hero .playgrounds .playgroundDetails .centerBox .bookings{
+  padding: 10px;
+  height: 100%;
+  position: relative;
+  z-index: 1003;
+}
+main .hero .playgrounds .playgroundDetails .centerBox .bookings table{
+  width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse; /* removes double borders */
+    /* font-family: Arial, sans-serif; */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+td, th{
+    border: 1px solid var(--color-border);
+    padding: 12px 15px;
+    text-align: left;
+    color: var(--color-text);
+}
+
+  th {
+    background-color: var(--color-grey-300);
+    font-weight: bold;
+    color: var(--color-text);
+
+  }
+tr{
+    background-color: var(--color-grey-100);
+  transition: background-color 0.2s ease-in-out;
+}
+
+  tr:nth-child(even) {
+    background-color: var(--color-grey-200);
+  }
+
+  tr:hover {
+    background-color: var(--color-light-grey);
+  }
+
+    #confirmBt {
+    background-color: #4CAF50; /* green */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+  }
+
+  #confirmBt:hover {
+    background-color: #45a049;
+  }
+
+  #confirmBt:active {
+    background-color: #3e8e41;
+  }
+
+main .hero .playgrounds .playgroundDetails .centerBox .bookings table span.confirmed{
+  font-size: 1rem;
+  letter-spacing: 0.7px;
+  color: var(--color-green);
+}
+  
+
+
+/* Booking information */
+
+main .hero .playgrounds .playgroundDetails .bookingInfo {
+  position: fixed;
+  width: 85%;
+  max-width: 1000px;
+  height: 85vh;
+  z-index: 10000;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  /* transform: translate(-50%, -50%); */
+  padding: 30px;
+  background-color: var(--color-background);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease-out forwards;
+  backdrop-filter: blur(5px);
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo h1 {
+  color: var(--color-text);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-green);
+  border-radius: 2px;
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-grey-100);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt:hover {
+  background-color: var(--color-grey-200);
+  transform: rotate(90deg);
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt:active {
+  transform: rotate(90deg) scale(0.95);
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo button.closeBt i {
+  font-size: 18px;
+  color: var(--color-text);
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 25px 30px;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  /* margin-bottom: 10px; */
+  display: block;
+  position: relative;
+  padding-left: 16px;
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo .info label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 16px;
+  background-color: var(--color-green);
+  border-radius: 3px;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod input {
+  display: none;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-grey-100);
+  letter-spacing: 1px;
+  max-width: 180px;
+  width: 100px;
+  height: 40px;
+  /* padding: 12px 16px; */
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-grey-200);
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod span.active {
+  background-color: var(--color-green);
+  border: 1px solid var(--color-green-dark);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  transform: translateY(-2px);
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod span.active p{
+  color: white;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod p {
+  font-size: 16px;
+  font-weight: 500;
+   color: var(--color-text);
+  margin: 0;
+
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentMethod img {
+  width: 60px;
+  height: auto;
+  /* border: 1.5px solid grey; */
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .promoCode {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .promoCodeField {
+  border: 2px solid var(--color-border);
+  padding-right: 12px;
+  background-color: var(--color-grey-100);
+  border-radius: 4px;
+  
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .promoCodeField input {
+  translate: 10px;
+  width: 260px;
+  height: 40px;
+  font-size: 18px;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: cornflowerblue;
+  border: none;
+  background: none;
+  outline: none;
+  
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .promoCodeField input::placeholder {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .promoCodeField button {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text);
+  background: none;
+  border: none;
+}
+
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentDetails .details {
+  border: 2px solid var(--color-border);
+  padding: 3px 24px;
+  background-color: var(--color-grey-100);
+  border-radius: 14px;
+  width: 335px;
+  position: relative;
+  margin-top: 14px;
+  /* overflow: hidden; */
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentDetails .details::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  right: -9px;
+  bottom: 45px;
+  border-left: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
+  rotate: 45deg;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentDetails .details::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  left: -9px;
+  bottom: 45px;
+  border-right: 2px solid var(--color-border);
+  border-top: 2px solid var(--color-border);
+  rotate: 45deg;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentDetails .details .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+  height: 40px;
+}
+main
+  .hero
+  .playgrounds
+  .playgroundDetails
+  .bookingInfo
+  .info
+  .paymentDetails
+  .details
+  .row:nth-last-child(1) {
+  border-top: 2px dashed var(--color-border);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentDetails .details .row .title {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: var(--color-text);
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentDetails .details .row .value {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo #bookBt {
+  width: 100px;
+  height: 100px;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: rgb(50, 207, 50);
+  color: white;
+  letter-spacing: 1px;
+  border: 1px solid green;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+main .hero .playgrounds .playgroundDetails .bookingInfo #bookBt:hover {
+  background-color: rgb(24, 135, 24);
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid var(--color-green);
+  width: 32%;
+  padding: 25px 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(76, 175, 80, 0.1);
+  backdrop-filter: blur(10px);
+  animation: qrCodeEntrance 0.6s ease-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes qrCodeEntrance {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+/* main .hero .playgrounds .playgroundDetails .qrcode::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+} */
+main .hero .playgrounds .playgroundDetails .qrcode h4 {
+  color: var(--color-green);
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 2px rgba(76, 175, 80, 0.2);
+  margin-bottom: 5px;
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode h5.name {
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 8px 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-green), #66bb6a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(76, 175, 80, 0.1);
+  position: relative;
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode h5.name::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-green), transparent);
+  border-radius: 1px;
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0;
+  padding: 8px 12px;
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode .user-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode .pitchName {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-green);
+  font-size: 16px;
+  margin: 5px 0;
+}
+main .hero .playgrounds .playgroundDetails .qrcode .appointment {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  opacity: 0.8;
+  margin: 5px 0;
+}
+main .hero .playgrounds .playgroundDetails .qrcode button {
+  background: linear-gradient(135deg, var(--color-green) 0%, #66bb6a 100%);
+  padding: 12px 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode button:hover {
+  background: linear-gradient(135deg, #2e7d32 0%, var(--color-green) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode button:hover::before {
+  left: 100%;
+}
+
+main .hero .playgrounds .playgroundDetails .qrcode button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* QR Code responsive improvements */
+@media (max-width: 768px) {
+  main .hero .playgrounds .playgroundDetails .qrcode {
+    width: 85%;
+    padding: 20px 15px;
+    gap: 10px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode h4 {
+    font-size: 1.1rem;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode h5.name {
+    font-size: 16px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode .user-info {
+    padding: 6px 10px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode .user-label {
+    font-size: 11px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode .pitchName {
+    font-size: 14px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  main .hero .playgrounds .playgroundDetails .qrcode {
+    width: 90%;
+    padding: 18px 12px;
+    gap: 8px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode h4 {
+    font-size: 1rem;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode h5.name {
+    font-size: 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode .user-info {
+    padding: 5px 8px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode .user-label {
+    font-size: 10px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode .pitchName {
+    font-size: 13px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .qrcode button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile responsive improvements for startTime horizontal scrolling */
+/* Responsive font sizes */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  main .hero .playgrounds > .items .item {
+    width: 47%;
+  }
+  
+  main .hero .playgrounds > .items .item .info .title {
+    font-size: 1.1rem;
+  }
+  
+  main .hero .playgrounds > .items .item .info span .location {
+    font-size: 0.85rem;
+  }
+  
+  main .hero .playgrounds > .items .item .info span {
+    gap: 4px;
+  }
+  
+  main .hero .playgrounds > .items .item .info span .price {
+    font-size: 0.9rem;
+    padding: 3px 8px;
+  }
+  
+  .items .item #favouriteBt {
+    right: 10px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .items .item #favouriteBt img {
+    width: 18px;
+    height: 18px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField {
+    width: 100%;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items {
+    gap: 12px;
+    padding: 6px 4px 10px 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item {
+    width: 75px;
+    min-width: 75px;
+    height: 95px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item p {
+    font-size: 18px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField::before,
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField::after {
+    height: 110px;
+    width: 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items::-webkit-scrollbar {
+    height: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 13px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item {
+    width: 80px;
+    min-width: 80px;
+    height: 100px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #startTimeField .items label.item p {
+    font-size: 18px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #dateField .date-picker-wrapper {
+    max-width: 100%;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .images .name {
+    font-size: 1.5rem;
+    padding: 6px 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size {
+    width: 100px;
+    height: 100px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size .size-text{
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #sizeField .sizes .size .size-icon {
+    font-size: 50px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  main .hero .playgrounds .searchBar {
+    margin: 0 15px;
+    padding: 12px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  main .hero .playgrounds .searchBar > span {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  main .hero .playgrounds .searchBar .search {
+    width: 100%;
+  }
+  
+  main .hero .playgrounds .searchBar .search input {
+    width: 100%;
+  }
+  
+  main .hero .playgrounds > .items {
+    padding: 20px 15px;
+    gap: 16px;
+  }
+  
+  main .hero .playgrounds > .items .item {
+    width: 100%;
+    max-height: 260px;
+  }
+  
+  main .hero .playgrounds > .items .item img {
+    height: 160px;
+  }
+  
+  main .hero .playgrounds > .items .item::before {
+    height: 160px;
+  }
+  
+  main .hero .playgrounds > .items .item .info {
+    padding: 12px 15px;
+  }
+  
+  main .hero .playgrounds > .items .item .info .title {
+    font-size: 1rem;
+  }
+  
+  .items .item #favouriteBt {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .items .item #favouriteBt img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Playground details modal improvements */
+  main .hero .playgrounds .playgroundDetails .centerBox {
+    width: 95%;
+    height: 90vh;
+    padding: 20px 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .images .slider {
+    height: 200px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info .location {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 12px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info .location button {
+    align-self: flex-end;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form {
+    padding: 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .info form #durationField .options {
+    flex-wrap: wrap;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .bookingInfo {
+    width: 95%;
+    padding: 20px 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .bookingInfo .info {
+    padding: 15px;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .bookingInfo .info .paymentDetails .details {
+    width: 100%;
+  }
+  
+  /* Booking table improvements */
+  main .hero .playgrounds .playgroundDetails .centerBox .bookings table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  main .hero .playgrounds .playgroundDetails .centerBox .bookings table th,
+  main .hero .playgrounds .playgroundDetails .centerBox .bookings table td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Enhanced Booking Cards Styles */
+.bookings-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top: 20px;
+}
+
+.booking-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.booking-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.booking-header h4 {
+  color: var(--color-text);
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: rgba(255, 193, 7, 0.1);
+  color: #f57c00;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.status-confirmed {
+  background: rgba(76, 175, 80, 0.1);
+  color: #43a047;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking-info p {
+  margin: 0 0 6px 0;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-info i {
+  width: 16px;
+  color: var(--color-text-secondary);
+}
+
+.booking-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.action-btn.confirm {
+  background: #4CAF50;
+  color: white;
+}
+
+.action-btn.confirm:hover {
+  background: #43a047;
+  transform: translateY(-1px);
+}
+
+.action-btn.cancel {
+  background: #f44336;
+  color: white;
+}
+
+.action-btn.cancel:hover {
+  background: #d32f2f;
+  transform: translateY(-1px);
+}
+
+.no-bookings {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text);
+  padding: 40px 20px;
+  font-size: 1.1rem;
+  background: var(--color-surface);
+  border-radius: 12px;
+  border: 2px dashed var(--color-border);
+
+}
+
+.no-bookings i {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.no-bookings p {
+  margin: 0;
+}
+
+/* Responsive Design for Booking Cards */
+@media (max-width: 768px) {
+  .bookings-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .booking-card {
+    padding: 12px;
+  }
+  
+  .booking-actions {
+    flex-direction: column;
+  }
+}
+
+/* Filter Modal Styles */
+.filter-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.filter-modal {
+  background: var(--color-background);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-header h3 {
+  color: var(--color-text);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.filter-header .close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.filter-header .close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.filter-content {
+  padding: 24px;
+}
+
+.filter-section {
+  margin-bottom: 24px;
+}
+
+.filter-section h4 {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.price-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price-range input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.price-range input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.price-range span {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.filter-section select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filter-section select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.sort-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.active-filters {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+.active-filters h4{
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(76, 175, 80, 0.1);
+  color: #43a047;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.filter-tag button {
+  background: none;
+  border: none;
+  color: #43a047;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.filter-tag button:hover {
+  background: rgba(76, 175, 80, 0.2);
+  transform: scale(1.1);
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.reset-btn {
+  flex: 1;
+  padding: 12px 16px;
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.reset-btn:hover {
+  background: var(--color-surface);
+  border-color: var(--color-text);
+}
+
+.apply-btn {
+  flex: 1;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.apply-btn:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Responsive Design for Filter Modal */
+@media (max-width: 768px) {
+  .filter-modal {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .filter-header {
+    padding: 16px 20px;
+  }
+  
+  .filter-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .filter-content {
+    padding: 20px;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  .sort-options {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .filter-actions {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
+  
+  .reset-btn,
+  .apply-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-modal {
+    width: 98%;
+    max-height: 98vh;
+  }
+  
+  .filter-header {
+    padding: 12px 16px;
+  }
+  
+  .filter-content {
+    padding: 16px;
+  }
+  
+  .price-range {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .price-range input {
+    width: 100%;
+  }
+  
+  .filter-tags {
+    gap: 6px;
+  }
+  
+  .filter-tag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}
+
+/* Full Screen Image Modal Styles */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  animation: modalFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.image-modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: contentSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+@keyframes contentSlideIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10001;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: buttonFadeIn 0.6s ease-out 0.3s both;
+}
+
+.image-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1) rotate(90deg);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-close:active {
+  transform: scale(0.95) rotate(90deg);
+  transition: all 0.1s ease;
+}
+
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.image-modal-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  z-index: 10001;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: navButtonSlideIn 0.6s ease-out 0.4s both;
+}
+
+.image-modal-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-nav:active {
+  transform: translateY(-50%) scale(0.95);
+  transition: all 0.1s ease;
+}
+
+.image-modal-nav i {
+  transition: transform 0.3s ease;
+}
+
+.image-modal-nav:hover i {
+  transform: scale(1.2);
+}
+
+@keyframes navButtonSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.image-modal-nav.prev {
+  animation: navButtonSlideInLeft 0.6s ease-out 0.4s both;
+}
+
+@keyframes navButtonSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.image-modal-nav.prev {
+  left: 20px;
+}
+
+.image-modal-nav.next {
+  right: 20px;
+}
+
+.image-modal-image-container {
+  max-width: 90%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: imageContainerFadeIn 0.7s ease-out 0.2s both;
+  position: relative;
+}
+
+.image-modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: imageZoomIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.image-modal-image:hover {
+  transform: scale(1.02);
+}
+
+.image-modal-image.loading {
+  opacity: 0.3;
+  filter: blur(2px);
+}
+
+.image-loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  z-index: 10002;
+  animation: spinnerFadeIn 0.3s ease-out;
+}
+
+.image-loading-spinner i {
+  font-size: 2rem;
+  color: #4CAF50;
+  animation: spin 1s linear infinite;
+}
+
+.image-loading-spinner p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spinnerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes imageContainerFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes imageZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-5deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.image-modal-info {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 10001;
+  animation: infoSlideUp 0.6s ease-out 0.5s both;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-modal-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  animation: textFadeIn 0.8s ease-out 0.7s both;
+}
+
+.image-modal-info p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  animation: textFadeIn 0.8s ease-out 0.8s both;
+}
+
+@keyframes infoSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-modal-thumbnails {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  z-index: 10001;
+  animation: thumbnailsSlideUp 0.6s ease-out 0.6s both;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-thumbnail {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  opacity: 0.6;
+  animation: thumbnailFadeIn 0.5s ease-out 0.8s both;
+}
+
+/* Disabled time slot styling for booking UI */
+.items .item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.image-modal-thumbnail:hover {
+  opacity: 0.9;
+  transform: scale(1.1) translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-thumbnail.active {
+  border-color: #4CAF50;
+  opacity: 1;
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+@keyframes thumbnailsSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes thumbnailFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design for Image Modal */
+@media (max-width: 768px) {
+  .image-modal-close {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .image-modal-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .image-modal-nav.prev {
+    left: 10px;
+  }
+  
+  .image-modal-nav.next {
+    right: 10px;
+  }
+  
+  .image-modal-image-container {
+    max-width: 95%;
+    max-height: 70%;
+  }
+  
+  .image-modal-info {
+    bottom: 15px;
+  }
+  
+  .image-modal-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .image-modal-info p {
+    font-size: 0.9rem;
+  }
+  
+  .image-modal-thumbnails {
+    bottom: 80px;
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .image-modal-thumbnail {
+    width: 50px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .image-modal-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .image-modal-nav.prev {
+    left: 5px;
+  }
+  
+  .image-modal-nav.next {
+    right: 5px;
+  }
+  
+  .image-modal-image-container {
+    max-width: 98%;
+    max-height: 65%;
+  }
+  
+  .image-modal-info {
+    bottom: 10px;
+  }
+  
+  .image-modal-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .image-modal-info p {
+    font-size: 0.8rem;
+  }
+  
+  .image-modal-thumbnails {
+    bottom: 70px;
+    gap: 6px;
+    padding: 6px;
+  }
+  
+  .image-modal-thumbnail {
+    width: 40px;
+    height: 30px;
+  }
+}

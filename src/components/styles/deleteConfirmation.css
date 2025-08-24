@@ -1,0 +1,222 @@
+.deleteConfirmationContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.deleteConfirmationModal {
+  background: var(--color-surface);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.deleteConfirmationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+.deleteConfirmationHeader h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.deleteConfirmationHeader .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.deleteConfirmationHeader .close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.deleteConfirmationContent {
+  padding: 24px;
+}
+
+.warning-icon {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.warning-icon i {
+  font-size: 3rem;
+  color: #f44336;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.deleteConfirmationContent h3 {
+  color: var(--color-text);
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.playground-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: var(--color-background);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+
+.playground-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--color-border);
+}
+
+.playground-details h4 {
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.playground-details p {
+  color: var(--color-text-secondary);
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.warning-message {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.warning-message p {
+  color: #e53935;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.deleteConfirmationActions {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-background);
+}
+
+.cancel-btn {
+  flex: 1;
+  padding: 12px 20px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.cancel-btn:hover {
+  background: var(--color-border);
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  flex: 1;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #d32f2f, #c62828);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+}
+
+@media (max-width: 768px) {
+  .deleteConfirmationModal {
+    margin: 10px;
+  }
+  
+  .deleteConfirmationContent {
+    padding: 20px;
+  }
+  
+  .playground-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .playground-thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .deleteConfirmationActions {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
+  
+  .warning-icon i {
+    font-size: 2.5rem;
+  }
+}

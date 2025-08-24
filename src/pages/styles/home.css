@@ -1,0 +1,190 @@
+main {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main .hero {
+  background-color: var(--color-background);
+  flex: 1;
+  min-height: calc(100vh - 40px);
+  padding: 40px 0 20px 0;
+  animation: fadeIn 0.5s ease-out;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+main .hero .container {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px auto 10px;
+  border-radius: 30px;
+  height: 120px;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+main .hero .container::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 30px;
+  height: 100%;
+  background: linear-gradient(to right, var(--color-whitesmoke) 0%, rgba(128, 128, 128, 0.336) 50%, rgba(128, 128, 128, 0.336) 50%, var(--color-whitesmoke) 100%);
+  opacity: 0.5;
+}
+main .hero .container img {
+  width: 80px;
+  height: 80px;
+  max-width: 100%;
+}
+
+/* Responsive styles for the container */
+@media (max-width: 992px) {
+  main .hero .container {
+    width: 85%;
+    height: 110px;
+  }
+  
+  main .hero .container img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  main .hero .container {
+    width: 90%;
+    height: 100px;
+  }
+  
+  main .hero .container img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  main .hero .container .middle h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  main .hero .container {
+    width: 95%;
+    height: 90px;
+    border-radius: 20px;
+  }
+  
+  main .hero .container::before {
+    border-radius: 20px;
+  }
+  
+  main .hero .container img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  main .hero .container .middle h2 {
+    font-size: 16px;
+  }
+  
+  main .hero .container > img:nth-child(1),
+  main .hero .container > img:nth-child(5) {
+    display: none; /* Hide the outer images on very small screens */
+  }
+}
+
+/* Opacity styles for container images */
+main .hero .container > img:nth-child(1),
+main .hero .container > img:nth-child(5){
+  opacity: 0.19;
+}
+main .hero .container > img:nth-child(2),
+main .hero .container > img:nth-child(4){
+  opacity: 0.5;
+}
+main .hero .container .middle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 1;
+}
+/* Styles for the middle image */
+main .hero .container .middle img {
+  max-width: 100%;
+  height: auto;
+}
+main .hero .container .middle h2{
+  font-size: 20px;
+  color: var(--color-text);
+}
+main .hero .ads {
+  width: 80%;
+  margin: 10px auto 20px;
+  border: 1px solid var(--color-border);
+  aspect-ratio: 16 / 9; /* Maintain aspect ratio instead of fixed height */
+  max-height: 190px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden; /* hide overflow, not scroll it */
+}
+
+main .hero .ads .slides {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  transform: translateX(calc(-100% * var(--index, 0)));
+}
+
+main .hero .ads .slides .slide {
+  flex: 0 0 100%;
+  height: 100%;
+
+}
+
+main .hero .ads .slides .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  border-radius: 20px; /* Match parent border radius */
+}
+
+/* Responsive styles for ads container */
+@media (max-width: 992px) {
+  main .hero .ads {
+    width: 90%;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  main .hero .ads {
+    width: 95%;
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  main .hero .ads {
+    width: 95%;
+    max-height: 140px;
+    margin: 10px auto 15px;
+    border-radius: 15px;
+  }
+  
+  main .hero .ads .slides img {
+    border-radius: 15px;
+  }
+}
+

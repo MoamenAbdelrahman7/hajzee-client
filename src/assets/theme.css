@@ -1,0 +1,42 @@
+/* Dark mode */
+:root {
+  /* Light Mode Colors */
+  --color-white: #ffffff;
+  --color-whitesmoke: #f5f5f5;
+  --color-light-grey: #eaeaea;
+  --color-grey-100: #e0e0e0;
+  --color-grey-200: #cfcfcf;
+  --color-grey-300: #b0b0b0;
+  --color-grey-400: #999999;
+  --color-grey-500: #7e7e7e;
+  --color-grey-600: #666666;
+  --color-grey-700: #4d4d4d;
+  --color-black: #000000;
+  --color-green: rgb(0, 156, 0);
+
+  --color-background: var(--color-white);
+  --color-text: var(--color-black);
+  --color-border: var(--color-grey-200);
+  --color-surface: var(--color-whitesmoke);
+}
+
+body.dark {
+  /* Dark Mode Overrides */
+  --color-white: #ffffff;
+  --color-whitesmoke: #252525;
+  --color-light-grey: #3a3a3a;
+  --color-grey-100: #4a4a4a;
+  --color-grey-200: #5c5c5c;
+  --color-grey-300: #6f6f6f;
+  --color-grey-400: #8a8a8a;
+  --color-grey-500: #a1a1a1;
+  --color-grey-600: #c0c0c0;
+  --color-grey-700: #dadada;
+  --color-black: #000000;
+  --color-green: rgb(0, 255, 0);
+
+  --color-background: #252525;
+  --color-text: var(--color-white);
+  --color-border: var(--color-grey-600);
+  --color-surface: #1e1e1e;
+}
