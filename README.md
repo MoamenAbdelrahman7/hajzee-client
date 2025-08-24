@@ -1,12 +1,28 @@
-# React + Vite
+## Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1) Install dependencies
 
-Currently, two official plugins are available:
+```bash
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2) Create `.env` with:
 
-## Expanding the ESLint configuration
+```bash
+VITE_API_URL=https://hajzee-server-production.up.railway.app
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3) Run locally
+
+```bash
+npm run dev
+```
+
+## Deploy to Vercel
+
+- Framework preset: Vite + React
+- Build command: `npm run build`
+- Output directory: `dist`
+- Environment variable: `VITE_API_URL` (same value as above)
+
+`vercel.json` is included to handle SPA routes and static assets under `/icons` and `/images`.

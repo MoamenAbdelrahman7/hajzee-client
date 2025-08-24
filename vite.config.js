@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/hajzee-client/', // 👈 important for GitHub Pages
+  // For Vercel, deploy at root. BASE_URL comes from Vite env if needed
+  base: '/',
 })
