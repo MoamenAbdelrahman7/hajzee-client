@@ -58,7 +58,23 @@ const Messages = () => {
   //   return () => clearInterval(id);
   // }, []);
 
-  const formatTime = (dateString) => new Date(dateString).toLocaleString('en-GB', { timeZone: 'UTC' });
+  const formatTime = (dateString) => {
+    const d = new Date(dateString);
+    // Match other app formatting: e.g., 20 Sep 2025, 08:15 PM
+    const datePart = d.toLocaleDateString('en-GB', {
+      timeZone: 'UTC',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    });
+    const timePart = d.toLocaleTimeString('en-GB', {
+      timeZone: 'UTC',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    });
+    return `${datePart}, ${timePart}`;
+  };
 
   const handleOpen = (conv) => setOpenConv(conv);
   const handleClose = () => setOpenConv(null);

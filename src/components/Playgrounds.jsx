@@ -20,7 +20,7 @@ const Playgrounds = () => {
 
   const [showDirections, setShowDirections] = useState(false);
 
-  const [paymentMethodIdx, setPaymentMethodIdx] = useState(-1);
+  const [paymentMethodIdx, setPaymentMethodIdx] = useState(0);
 
   const [showBookingInfo, setShowBookingInfo] = useState(false);
   const [bookingInfo, setBookingInfo] = useState({});
@@ -1287,7 +1287,7 @@ const Playgrounds = () => {
                   </span>
                 </div>
 
-                <div className="promoCode">
+                { /* <div className="promoCode">
                   <label htmlFor="promoCodeInput">Promo code</label>
                   <span className="promoCodeField">
                     <input
@@ -1300,7 +1300,7 @@ const Playgrounds = () => {
                     />
                     <button>Apply</button>
                   </span>
-                </div>
+                </div> */ }
 
                 <div className="paymentDetails">
                   <label>Payment details</label>

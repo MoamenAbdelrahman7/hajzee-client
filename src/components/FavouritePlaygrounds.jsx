@@ -321,7 +321,7 @@ const FavouritePlaygrounds = ({ user }) => {
       <div className="favorites-header">
         <h2>Your Favorite Playgrounds</h2>
         <p className="favorites-count">
-          <span className="count-number">{favouritePlaygrounds.length}</span>
+          <span className="count-number">{favouritePlaygrounds.length} </span>
           {favouritePlaygrounds.length === 1 ? 'playground' : 'playgrounds'} saved
         </p>
       </div>

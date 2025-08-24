@@ -73,7 +73,7 @@ body, html {
 }
 
 .right .head p a:hover {
-  color: #45a049;
+  color: var(--color-green);
   background-color: rgba(0, 156, 0, 0.1);
   transform: translateY(-1px);
 }
@@ -119,8 +119,8 @@ body, html {
 .right form fieldset textarea:focus {
   outline: none;
   border-color: var(--color-green);
-  background-color: rgba(0, 156, 0, 0.05);
-  box-shadow: 0 0 0 2px rgba(0, 156, 0, 0.1);
+  background-color: color-mix(in srgb, var(--color-green) 6%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-green) 10%, transparent);
 }
 
 .right form fieldset input::placeholder {
@@ -215,9 +215,9 @@ body, html {
 }
 
 .upload-btn:hover {
-  background-color: #45a049;
+  background-color: color-mix(in srgb, var(--color-green) 92%, black);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 156, 0, 0.3);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-green) 30%, transparent);
 }
 
 /* Role Selection Styles */
@@ -244,15 +244,15 @@ body, html {
 
 .role-options .role:hover {
   border-color: var(--color-green);
-  background-color: rgba(0, 156, 0, 0.05);
+  background-color: color-mix(in srgb, var(--color-green) 6%, transparent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 156, 0, 0.15);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-green) 15%, transparent);
 }
 
 .role-options .role.active {
   border-color: var(--color-green);
-  background-color: rgba(0, 156, 0, 0.05);
-  box-shadow: 0 0 0 2px rgba(0, 156, 0, 0.1);
+  background-color: color-mix(in srgb, var(--color-green) 6%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-green) 10%, transparent);
 }
 
 .role-options .role input[type="radio"] {
@@ -320,9 +320,9 @@ body, html {
 }
 
 .right form button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: color-mix(in srgb, var(--color-green) 92%, black);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 156, 0, 0.3);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-green) 30%, transparent);
 }
 
 .right form button[type="submit"]:active {

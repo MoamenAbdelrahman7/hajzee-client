@@ -237,7 +237,7 @@ const ActivityLogs = () => {
                   </button>
                   <button 
                     className="qr-btn"
-                    style={{ background: '#1976D2' }}
+                    style={{ backgroundColor: 'var(--color-green)' }}
                     onClick={() => handleOpenChat(activity)}
                   >
                     <i className="fas fa-comments"></i>
@@ -255,7 +255,7 @@ const ActivityLogs = () => {
                   </span>
                   <button 
                     className="qr-btn"
-                    style={{ background: '#1976D2', marginTop: '8px' }}
+                    style={{ backgroundColor: 'var(--color-green)', marginTop: '8px', color: 'var(--color-white)' }}
                     onClick={() => handleOpenChat(activity)}
                   >
                     <i className="fas fa-comments"></i>

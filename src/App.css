@@ -17,6 +17,9 @@ body {
 
 .page-container {
   padding-top: 60px; 
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
 }
 
 @media (max-width: 768px) {
@@ -84,7 +87,7 @@ main .hero {
     padding: 10px 5px;
   }
   
-  button, input, select, textarea {
-    font-size: 14px !important;
+  input, select, textarea {
+    font-size: 14px;
   }
 }

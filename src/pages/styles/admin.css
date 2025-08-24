@@ -136,7 +136,7 @@
 }
 
 .admin-tab-btn.active {
-  background: linear-gradient(135deg, var(--color-primary), #2e7d32);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-green));
   color: white;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
@@ -203,7 +203,7 @@
 
 .admin-status-confirmed {
   background-color: #e8f5e8;
-  color: #43a047;
+  color: var(--color-green);
 }
 
 .admin-status-completed {

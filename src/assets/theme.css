@@ -12,7 +12,9 @@
   --color-grey-600: #666666;
   --color-grey-700: #4d4d4d;
   --color-black: #000000;
-  --color-green: rgb(0, 156, 0);
+  --color-green: #2563EB; /* Light mode accent (blue 600) */
+  /* Success color (kept green for success states) */
+  --color-success: #22c55e; /* green 500 */
 
   --color-background: var(--color-white);
   --color-text: var(--color-black);
@@ -33,7 +35,9 @@ body.dark {
   --color-grey-600: #c0c0c0;
   --color-grey-700: #dadada;
   --color-black: #000000;
-  --color-green: rgb(0, 113, 0);
+  --color-green: #64a7fa; /* Dark mode accent (blue 400) */
+  /* Success color in dark mode */
+  --color-success: #34d399; /* green 400 */
 
   --color-background: #252525;
   --color-text: var(--color-white);

@@ -126,9 +126,9 @@
 }
 
 .activity-status.confirmed {
-  background: rgba(76, 175, 80, 0.1);
-  color: var(--color-green);
-  border: 1px solid rgba(76, 175, 80, 0.3);
+  background: color-mix(in srgb, var(--color-success) 10%, transparent);
+  color: var(--color-success);
+  border: 1px solid color-mix(in srgb, var(--color-success) 30%, transparent);
 }
 
 .activity-status.pending {
@@ -199,11 +199,11 @@
 .qr-code-small:hover {
   transform: scale(1.05);
   border-color: var(--color-green);
-  box-shadow: 0 4px 12px rgba(0, 156, 0, 0.3);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-green) 30%, transparent);
 }
 
 .qr-btn {
-  background: var(--color-green);
+  background: color-mix(in srgb, var(--color-green) 85%, black);
   color: white;
   border: none;
   padding: 6px 12px;
@@ -218,9 +218,9 @@
 }
 
 .qr-btn:hover {
-  background: #45a049;
+  background: color-mix(in srgb, var(--color-green) 92%, black);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 156, 0, 0.3);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-green) 30%, transparent);
 }
 
 /* QR Pending Styles */

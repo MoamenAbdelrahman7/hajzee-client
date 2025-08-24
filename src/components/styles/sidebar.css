@@ -1,10 +1,10 @@
 .left {
   flex: 0.25;
   height: calc(100vh - 60px);
-  padding: 25px 15px;
+  padding: clamp(16px, 2.5vw, 25px) 15px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0px;
   background-color: var(--color-background);
   border-right: 1px solid var(--color-border);
   position: fixed;
@@ -47,6 +47,7 @@
   border-radius: 10px;
   cursor: pointer;
   margin-bottom: 5px;
+  font-size: 0.5rem;
 }
 .left .favourite:hover,
 .left .activityLog:hover {
@@ -64,8 +65,8 @@
 }
 .left .favourite img,
 .left .activityLog img {
-  width: 24px;
-  height: 24px;
+  width: clamp(20px, 1.8vw, 28px);
+  height: clamp(20px, 1.8vw, 28px);
   transition: transform 0.3s ease;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
@@ -77,8 +78,8 @@
 
 .left .favourite img.arrow,
 .left .activityLog img.arrow {
-  width: 16px;
-  height: 16px;
+  width: clamp(14px, 1.2vw, 18px);
+  height: clamp(14px, 1.2vw, 18px);
   opacity: 0.7;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -94,7 +95,7 @@
 } */
 .left .favourite a,
 .left .activityLog button {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 0.8rem + 0.3vw, 1rem);
   color: var(--color-text);
   background: none;
   border: none;
@@ -148,7 +149,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-grey-100);
-  padding: 10px 12px;
+  padding: clamp(8px, 1.2vw, 12px) clamp(10px, 1.5vw, 14px);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -167,8 +168,8 @@
 }
 
 .left .activitiesList .items .item span img {
-  width: 40px;
-  height: 40px;
+  width: clamp(28px, 3vw, 44px);
+  height: clamp(28px, 3vw, 44px);
   object-fit: contain;
   border-radius: 8px;
   padding: 5px;
@@ -187,7 +188,7 @@
   gap: 3px;
 }
 .left .activitiesList .items .item span .info .name {
-  font-size: 15px;
+  font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
   font-weight: 600;
   letter-spacing: 0.5px;
   color: var(--color-text);
@@ -196,7 +197,7 @@
 }
 .left .activitiesList .items .item span .info .appointment,
 .left .activitiesList .items .item span .info .remainingTime {
-  font-size: 12px;
+  font-size: clamp(0.7rem, 0.65rem + 0.2vw, 0.85rem);
   font-weight: 500;
   letter-spacing: 0.3px;
   /* color: var(--color-text-secondary); */
@@ -294,14 +295,14 @@
 }
 
 .left .activitiesList .items .item.owner .info .playgroundName {
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.9rem);
   font-weight: 600;
   color: var(--color-text);
   margin: 0;
 }
 
 .left .activitiesList .items .item.owner .info .appointment {
-  font-size: 0.7rem;
+  font-size: clamp(0.65rem, 0.6rem + 0.2vw, 0.85rem);
   white-space: nowrap;
   color: var(--color-green);
   font-weight: 500;
@@ -406,6 +407,6 @@
   
   .left .favourite a,
   .left .activityLog button {
-    font-size: 14px;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   }
 }

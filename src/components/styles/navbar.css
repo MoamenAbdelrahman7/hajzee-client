@@ -82,7 +82,7 @@ header .logo::after {
   left: 0;
   width: 0;
   height: 3px;
-  background-color: var(--color-green, #4CAF50);
+  background-color: color-mix(in srgb, var(--color-green) 85%, black);
   transition: width 0.3s ease;
   border-radius: 3px;
 }
@@ -118,7 +118,7 @@ header nav .darkmodeBt:hover {
   transform: scale(1.05);
 }
 header nav .darkmodeBt.active {
-  background-color: var(--color-green, #4CAF50);
+  background-color: color-mix(in srgb, var(--color-green) 92%, black);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -329,7 +329,7 @@ header nav .notifications .items .item.read {
 /* Type accents */
 header nav .notifications .items .item.booking_confirmed i {
   background-color: rgba(76, 175, 80, 0.15);
-  color: #43a047;
+  color: var(--color-green);
 }
 
 header nav .notifications .items .item.booking_canceled i {
@@ -371,7 +371,7 @@ header nav .notifications .items .item .actions .notif-action:hover {
 }
 
 header nav .notifications .items .item .actions .notif-action.mark-read i {
-  color: #43a047;
+  color: var(--color-green);
 }
 
 header nav .notifications .items .item .actions .notif-action.delete i {

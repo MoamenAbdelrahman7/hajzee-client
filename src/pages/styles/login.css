@@ -132,9 +132,9 @@ body, html {
 }
 
 .loginContainer .submit-btn:hover {
-  background-color: #45a049;
+  background-color: color-mix(in srgb, var(--color-green) 92%, black);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 156, 0, 0.3);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-green) 30%, transparent);
 }
 
 .loginContainer .submit-btn:active {
@@ -160,8 +160,8 @@ body, html {
 }
 
 .loginContainer .switch-form a:hover {
-  color: #45a049;
-  background-color: rgba(0, 156, 0, 0.1);
+  color: var(--color-green);
+  background-color: color-mix(in srgb, var(--color-green) 10%, transparent);
   transform: translateY(-1px);
 }
 

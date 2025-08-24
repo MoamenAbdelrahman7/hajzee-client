@@ -226,7 +226,7 @@
 .profile-container .profile-info .profile-change-password-btn {
   width: 180px;
   height: 40px;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: 500;
   background-color: var(--color-green);
   color: white;
@@ -243,9 +243,9 @@
 }
 
 .profile-container .profile-info .profile-change-password-btn:hover {
-  background-color: #45a049;
+  background-color: color-mix(in srgb, var(--color-green) 92%, black);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-green) 30%, transparent);
 }
 
 .profile-container .profile-form {

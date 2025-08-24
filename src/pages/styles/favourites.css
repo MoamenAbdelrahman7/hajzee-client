@@ -57,7 +57,7 @@ main .favouritesContainer {
   width: 24px;
   height: 24px;
   border: 3px solid rgba(76, 175, 80, 0.2);
-  border-top: 3px solid #4CAF50;
+  border-top: 3px solid var(--color-green);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
